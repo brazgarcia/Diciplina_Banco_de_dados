@@ -135,8 +135,8 @@ CREATE TABLE telefones -- TELEFONES.
     id INT NOT NULL AUTO_INCREMENT,
     ddd CHAR(2) NOT NULL,
     telefone CHAR(9) NULL, 
-    prestadores_id INT NOT NULL,
-    clientes_id INT NOT NULL,
+    prestadores_id INT NULL,
+    clientes_id INT NULL,
     
     PRIMARY KEY (id),
     
@@ -157,8 +157,8 @@ CREATE TABLE enderecos -- ENDEREÇOS.
     uf ENUM('RO', 'AC', 'AM', 'RR', 'PA', 'AP', 'TO', 'MA', 'PI', 'CE', 'RN', 'PB', 'PE', 'AL', 'SE', 'BA', 'MG', 'ES', 'RJ', 'SP', 'PR', 'SC', 'RS', 'MS', 'MT', 'GO', 'DF') NOT NULL,
     cep CHAR(8) NOT NULL,
     complemento VARCHAR(40) NULL,
-    prestadores_id INT NOT NULL,
-    clientes_id INT NOT NULL,
+    prestadores_id INT NULL,
+    clientes_id INT NULL,
     
     PRIMARY KEY (id),
     

@@ -17,20 +17,6 @@ VALUES
 ('Global Logistics Solutions Ltda.', '99888777000111', 'contato@glsolutions.com', 'Yd6#Nn8$Jv1*Tp4%Qz3^Lk9&Wb2@Xr7!', '2024-06-16 17:00:00', 'Empresa global de logística procurando parceiros locais para operações de transporte marítimo.'),
 ('TransCargo Express Ltda.', '12345678000190', 'contato@transcargo.com.br', 'Xk2*Qr4%Nl9#Hp6&Jz7$Vd1@Yt3^Wb8!', '2024-06-16 09:30:00', 'Empresa de transporte de carga buscando autônomos para distribuição local.');
 
--- Inserts para a tabela avaliacoes
-INSERT INTO avaliacoes (nota, comentario, clientes_id, prestadores_id)
-VALUES
-(8, 'Excelente serviço prestado! Pontualidade e cuidado com a carga foram impressionantes.', 3, 4),
-(4, 'Empresa séria e comprometida. Superou minhas expectativas no transporte de equipamentos industriais.', 1, 3),
-(10, 'Ótimo atendimento e preço justo. Recomendo para quem precisa de transporte rápido e seguro.', 2, 2),
-(8, 'Serviço de transporte marítimo muito eficiente. Minha carga chegou sem problemas.', 5, 1),
-(9, 'Cliente muito organizado e claro nas informações. Foi um prazer trabalhar com ele.', 5, 3),
-(10, 'Cliente muito compreensível e colaborativo. Facilitou bastante o processo de transporte.', 5, 2),
-(5, 'Cliente exigente, mas justo. Foi uma experiência desafiadora e gratificante.', 4, 1),
-(7, 'Cliente bastante comunicativa e participativa. Trabalhar com ela foi muito bom.', 2, 2),
-(3, 'Transporte de medicamentos sensíveis feito com muita responsabilidade e cuidado.', 4, 2),
-(10, 'Entrega de equipamentos industriais realizada dentro do prazo e com toda segurança necessária.', 1, 1);
-
 -- Inserts para a tabela categorias
 INSERT INTO categorias (nome, descricao)
 VALUES
@@ -44,6 +30,20 @@ VALUES
 ('Expressas', 'Entregas expressas com prazos curtos.'),
 ('Industrial', 'Transporte de equipamentos e maquinário industrial.'),
 ('Construção', 'Transporte de materiais de construção.');
+
+-- Inserts para a tabela avaliacoes
+INSERT INTO avaliacoes (nota, comentario, clientes_id, prestadores_id)
+VALUES
+(8, 'Excelente serviço prestado! Pontualidade e cuidado com a carga foram impressionantes.', 3, 4),
+(4, 'Empresa séria e comprometida. Superou minhas expectativas no transporte de equipamentos industriais.', 1, 3),
+(10, 'Ótimo atendimento e preço justo. Recomendo para quem precisa de transporte rápido e seguro.', 2, 2),
+(8, 'Serviço de transporte marítimo muito eficiente. Minha carga chegou sem problemas.', 5, 1),
+(9, 'Cliente muito organizado e claro nas informações. Foi um prazer trabalhar com ele.', 5, 3),
+(10, 'Cliente muito compreensível e colaborativo. Facilitou bastante o processo de transporte.', 5, 2),
+(5, 'Cliente exigente, mas justo. Foi uma experiência desafiadora e gratificante.', 4, 1),
+(7, 'Cliente bastante comunicativa e participativa. Trabalhar com ela foi muito bom.', 2, 2),
+(3, 'Transporte de medicamentos sensíveis feito com muita responsabilidade e cuidado.', 4, 2),
+(10, 'Entrega de equipamentos industriais realizada dentro do prazo e com toda segurança necessária.', 1, 1);
 
 -- Inserts para a tabela tranportes_transbordo
 INSERT INTO transportes_transbordo (transporte, transbordo, tipo_modal, descricao, categorias_id, prestadores_id)
@@ -60,21 +60,18 @@ VALUES
 (TRUE, FALSE, 'Rodoviário', 'Transporte rodoviário de materiais de construção.', 1, 5);
 
 -- Inserts para a tabela ordens_servicos
-
--- Paramos aqui para concertar
-
--- INSERT INTO ordens_servicos (descricao, data_de_inicio, data_de_termino, status_, clientes_id, transportes_transbordo_id)
--- VALUES
--- ('Entrega de carga leve', '2023-06-01 10:00:00', '2023-06-02 10:00:00', 'Concluída', 1, 3),
--- ('Transporte de carga média', '2023-06-05 14:30:00', '2023-06-06 14:30:00', 'Concluída', 5, 2),
--- ('Transporte de carga pesada', '2023-06-10 09:45:00', '2023-06-12 09:45:00', 'Em andamento', 2, 3),
--- ('Mudança residencial', '2023-06-15 11:20:00', '2023-06-16 11:20:00', 'Aberta', 1, 1),
--- ('Entrega de produtos perecíveis', '2023-06-20 16:00:00', '2023-06-21 16:00:00', 'Concluída',  5, 2),
--- ('Entrega de documentos', '2023-06-25 08:30:00', '2023-06-25 12:30:00', 'Concluída', 4, 3),
--- ('Transporte de mercadorias frágeis', '2023-07-01 12:15:00', '2023-07-02 12:15:00', 'Aberta', 3, 3),
--- ('Entrega expressa', '2023-07-05 10:45:00', '2023-07-05 18:45:00', 'Concluída', 3, 2),
--- ('Transporte de equipamentos industriais', '2023-07-10 14:00:00', '2023-07-11 14:00:00', 'Em andamento', 4, 4),
--- ('Transporte de materiais de construção', '2023-07-15 09:00:00', '2023-07-16 09:00:00', 'Pendente', 1, 5);
+INSERT INTO ordens_servicos (descricao, data_de_inicio, data_de_termino, status_, clientes_id, transportes_transbordo_id)
+VALUES
+('Entrega de carga leve', '2023-06-01 10:00:00', '2023-06-02 10:00:00', 'Concluída', 1, 3),
+('Transporte de carga média', '2023-06-05 14:30:00', '2023-06-06 14:30:00', 'Concluída', 5, 2),
+('Transporte de carga pesada', '2023-06-10 09:45:00', '2023-06-12 09:45:00', 'Em andamento', 2, 3),
+('Mudança residencial', '2023-06-15 11:20:00', '2023-06-16 11:20:00', 'Aberta', 1, 1),
+('Entrega de produtos perecíveis', '2023-06-20 16:00:00', '2023-06-21 16:00:00', 'Concluída',  5, 2),
+('Entrega de documentos', '2023-06-25 08:30:00', '2023-06-25 12:30:00', 'Concluída', 4, 3),
+('Transporte de mercadorias frágeis', '2023-07-01 12:15:00', '2023-07-02 12:15:00', 'Aberta', 3, 3),
+('Entrega expressa', '2023-07-05 10:45:00', '2023-07-05 18:45:00', 'Concluída', 3, 2),
+('Transporte de equipamentos industriais', '2023-07-10 14:00:00', '2023-07-11 14:00:00', 'Em andamento', 4, 4),
+('Transporte de materiais de construção', '2023-07-15 09:00:00', '2023-07-16 09:00:00', 'Pendente', 1, 5);
 
 -- Inserts para a tabela formas_pagamentos
 INSERT INTO formas_pagamentos (tipo, valor, data_recebimento, ordens_servicos_id)
@@ -93,30 +90,30 @@ VALUES
 -- Inserts para a tabela telefones
 INSERT INTO telefones (ddd, telefone, prestadores_id, clientes_id)
 VALUES
-('11', '987654321', 1, 1),
-('21', '912345678', 2, 2),
-('31', '934567890', 3, 3),
-('41', '956789012', 4, 4),
-('51', '978901234', 5, 5),
-('61', '990123456', 6, 6),
-('71', '912345678', 7, 7),
-('81', '934567890', 8, 8),
-('91', '956789012', 9, 9),
-('31', '978901234', 10, 10);
+('11', '987654321', 3, NULL),
+('21', '912345678', NULL, 2),
+('31', '934567890', 1, NULL),
+('41', '956789012', 5, NULL),
+('51', '978901234', NULL, 5),
+('61', '990123456', NULL, 1),
+('71', '912345678', 4, NULL),
+('81', '934567890', NULL, 3),
+('91', '956789012', 2, NULL),
+('31', '978901234', NULL, 4);
 
 -- Inserts para a tabela enderecos
 INSERT INTO enderecos (logradouro, bairro, municipio, uf, cep, complemento, prestadores_id, clientes_id)
 VALUES
-('Rua A', 'Centro', 'São Paulo', 'SP', '01001000', 'Apto 101', 1, 1),
-('Rua B', 'Bela Vista', 'Rio de Janeiro', 'RJ', '20020000', 'Casa', 2, 2),
-('Avenida C', 'Savassi', 'Belo Horizonte', 'MG', '30130000', 'Loja 2', 3, 3),
-('Praça D', 'Centro', 'Curitiba', 'PR', '80040000', 'Bloco A', 4, 4),
-('Rua E', 'Menino Deus', 'Porto Alegre', 'RS', '90050000', 'Cobertura', 5, 5),
-('Avenida F', 'Asa Sul', 'Brasília', 'DF', '70060000', 'Sala 301', 6, 6),
-('Rua G', 'Pituba', 'Salvador', 'BA', '41800000', 'Galpão', 7, 7),
-('Rua H', 'Boa Viagem', 'Recife', 'PE', '51020000', 'Piso 2', 8, 8),
-('Avenida I', 'Cidade Nova', 'Manaus', 'AM', '69000000', 'Apto 202', 9, 9),
-('Rua J', 'Aldeota', 'Fortaleza', 'CE', '60100000', 'Casa 3', 10, 10);
+('Rua A', 'Centro', 'São Paulo', 'SP', '01001000', 'Apto 101', 3, null),
+('Rua B', 'Bela Vista', 'Rio de Janeiro', 'RJ', '20020000', 'Casa', NULL, 2),
+('Avenida C', 'Savassi', 'Belo Horizonte', 'MG', '30130000', 'Loja 2', 1, NULL),
+('Praça D', 'Centro', 'Curitiba', 'PR', '80040000', 'Bloco A', 5, NULL),
+('Rua E', 'Menino Deus', 'Porto Alegre', 'RS', '90050000', 'Cobertura', NULL, 5),
+('Avenida F', 'Asa Sul', 'Brasília', 'DF', '70060000', 'Sala 301', NULL, 1),
+('Rua G', 'Pituba', 'Salvador', 'BA', '41800000', 'Galpão', 4, NULL),
+('Rua H', 'Boa Viagem', 'Recife', 'PE', '51020000', 'Piso 2', NULL, 3),
+('Avenida I', 'Cidade Nova', 'Manaus', 'AM', '69000000', 'Apto 202', 2, NULL),
+('Rua J', 'Aldeota', 'Fortaleza', 'CE', '60100000', 'Casa 3', NULL, 4);
 
 
 
